@@ -2,8 +2,8 @@ import sys
 import pygame
 from constants import *
 import numpy as np
-import random
 import copy
+import secrets
 
 pygame.init()
 screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
@@ -130,7 +130,7 @@ class AI:
             tuple: The chosen move as (row, col).
         """
         empty_sqrs = board.get_empty_sqrs()
-        index = random.randrange(0, len(empty_sqrs))
+        index = secrets.SystemRandom().randrange(0, len(empty_sqrs))
         return empty_sqrs[index]  # returning (row, col)
 
     def minimax(self, board, maximizing):
