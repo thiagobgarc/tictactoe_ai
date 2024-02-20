@@ -145,10 +145,9 @@ class AI:
             tuple: The evaluation and the best move as (eval, move).
         """
         # terminal case
-        case = board.final_state()
 
         # player one wins
-        if case == 1:
+        if (case := board.final_state()) == 1:
             return 1, None  # eval, move
         # player two wins
         if case == 2:
